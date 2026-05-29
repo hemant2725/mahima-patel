@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 40 50% 58%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 40 5% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 40 50% 58%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 40 50% 58%;
+    --radius: 0rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer base {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .font-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .section-dark {
+    @apply bg-[#0a0a0a] text-white;
+  }
+
+  .section-light {
+    @apply bg-[#f8f8f6] text-[#1a1a1a];
+  }
+
+  .label-gold {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: #d4a853;
+  }
+
+  .heading-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+  }
+
+  .heading-2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .body-text {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    line-height: 1.65;
+  }
+
+  .cta-button {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 14px 40px;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #ffffff;
+    background: transparent;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .cta-button:hover {
+    background: #d4a853;
+    border-color: #d4a853;
+    color: #0a0a0a;
+  }
+
+  .cta-button-dark {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 14px 36px;
+    border: 1px solid rgba(0,0,0,0.3);
+    color: #1a1a1a;
+    background: transparent;
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+
+  .cta-button-dark:hover {
+    background: #d4a853;
+    border-color: #d4a853;
+    color: #0a0a0a;
+  }
+
+  .text-link-gold {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #d4a853;
+    border-bottom: 1px solid #d4a853;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .text-link-gold:hover {
+    opacity: 0.7;
+  }
+}
+
+@layer utilities {
+  .text-shadow-hero {
+    text-shadow: 0 2px 30px rgba(0,0,0,0.3);
+  }
+
+  .text-shadow-spiral {
+    text-shadow: 0 2px 40px rgba(0,0,0,0.6);
+  }
+}
+
+/* Custom cursor styles */
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #d4a853;
+  border-radius: 50%;
+  z-index: 9999;
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: normal;
+}
+
+.custom-cursor.expanded {
+  width: 48px;
+  height: 48px;
+  mix-blend-mode: difference;
+}
+
+/* Hide default cursor when custom cursor is active */
+body.cursor-none,
+body.cursor-none * {
+  cursor: none !important;
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Spiral SVG animation */
+@keyframes spiral-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spiral-rotate {
+  animation: spiral-rotate 60s linear infinite;
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
