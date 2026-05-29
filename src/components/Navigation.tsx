@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Collections', id: 'collections' },
   { label: 'Algorithm', id: 'algorithm' },
   { label: 'Atelier', id: 'atelier' },
-  { label: 'Contact', id: 'contact' },
+  // { label: 'Contact', id: 'contact' },
 ];
 
 export default function Navigation({ onNavigate }: NavigationProps) {
