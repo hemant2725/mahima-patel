@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,90 +7,115 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SpiralVortex from './components/SpiralVortex';
 import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
-import Hero from './sections/Hero';
-import Manifesto from './sections/Manifesto';
-import SpiralShowcase from './sections/SpiralShowcase';
-import Collections from './sections/Collections';
-import AlgorithmDetail from './sections/AlgorithmDetail';
-import Atelier from './sections/Atelier';
-import Press from './sections/Press';
-import Contact from './sections/Contact';
-import Footer from './sections/Footer';
+import HomePage from './pages/HomePage';
+import CollectionPage from './pages/CollectionPage';
+import ProductPage from './pages/ProductPage';
+import NotFound from './pages/NotFound';
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const lenisRef = useRef<Lenis | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Initialize Lenis smooth scroll
     const lenis = new Lenis({
       lerp: 0.08,
       smoothWheel: true,
     });
     lenisRef.current = lenis;
 
-    // Connect Lenis to GSAP ScrollTrigger
     lenis.on('scroll', ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
+    const tick = (time: number) => {
       lenis.raf(time * 1000);
-    });
+    };
 
+    gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      gsap.ticker.remove(tick);
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
     };
   }, []);
 
-  const handleNavigate = (id: string) => {
-    const element = document.getElementById(id);
-    if (element && lenisRef.current) {
-      lenisRef.current.scrollTo(element, { offset: 0 });
+  useEffect(() => {
+    if (location.pathname === '/') {
+      return;
     }
+
+    const frame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      lenisRef.current?.scrollTo(0, { immediate: true });
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.pathname, location.key]);
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      return;
+    }
+
+    let frame = 0;
+    let attempts = 0;
+
+    const targetId = location.hash ? location.hash.slice(1) : '';
+
+    const tryScroll = () => {
+      if (!targetId || targetId === 'hero') {
+        lenisRef.current?.scrollTo(0, { immediate: true });
+        return;
+      }
+
+      const element = document.getElementById(targetId);
+
+      if (!element) {
+        if (attempts < 20) {
+          attempts += 1;
+          frame = window.requestAnimationFrame(tryScroll);
+        }
+        return;
+      }
+
+      lenisRef.current?.scrollTo(element, { offset: 0 });
+    };
+
+    frame = window.requestAnimationFrame(tryScroll);
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [location.hash, location.pathname]);
+
+  const handleNavigate = (id: string) => {
+    if (location.pathname === '/' && id === 'hero') {
+      lenisRef.current?.scrollTo(0, { immediate: true });
+      return;
+    }
+
+    navigate(id === 'hero' ? '/' : `/#${id}`);
   };
 
   return (
     <div className="relative min-h-screen">
-      {/* WebGL Spiral Background - Fixed behind everything */}
       <SpiralVortex />
-
-      {/* Custom Cursor */}
       <CustomCursor />
-
-      {/* Navigation */}
       <Navigation onNavigate={handleNavigate} />
 
-      {/* Content layers above the spiral */}
       <div className="relative" style={{ zIndex: 1 }}>
-        {/* Hero - transparent, spiral visible behind */}
-        <Hero onNavigate={handleNavigate} />
-
-        {/* Manifesto - dark background covers spiral */}
-        <Manifesto />
-
-        {/* Spiral Showcase - transparent, spiral visible */}
-        <SpiralShowcase />
-
-        {/* Collections - light background covers spiral */}
-        <Collections />
-
-        {/* Algorithm Detail - dark background covers spiral */}
-        <AlgorithmDetail />
-
-        {/* Atelier - light background covers spiral */}
-        <Atelier />
-
-        {/* Press - dark background covers spiral */}
-        <Press />
-
-        {/* Contact - dark background covers spiral */}
-        <Contact />
-
-        {/* Footer */}
-        <Footer onNavigate={handleNavigate} />
+        <Routes>
+          <Route path="/" element={<HomePage onNavigate={handleNavigate} />} />
+          <Route
+            path="/collections/:collectionSlug"
+            element={<CollectionPage />}
+          />
+          <Route
+            path="/collections/:collectionSlug/products/:productSlug"
+            element={<ProductPage />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </div>
     </div>
   );

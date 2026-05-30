@@ -1,44 +1,20 @@
 import { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { collections } from '../data/shopCatalog';
+
 gsap.registerPlugin(ScrollTrigger);
 
-const collections = [
-  {
-    name: 'Fibonacci Silks',
-    season: 'AW25',
-    imageA: '/images/img-collection-1a.jpg',
-    imageB: '/images/img-collection-1b.jpg',
-  },
-  {
-    name: 'Radial Tailoring',
-    season: 'AW25',
-    imageA: '/images/img-collection-2a.jpg',
-    imageB: '/images/img-collection-2b.jpg',
-  },
-  {
-    name: 'Vortex Knitwear',
-    season: 'AW25',
-    imageA: '/images/img-collection-3a.jpg',
-    imageB: '/images/img-collection-3b.jpg',
-  },
-  {
-    name: 'Golden Mesh',
-    season: 'AW25',
-    imageA: '/images/img-collection-4a.jpg',
-    imageB: '/images/img-collection-4b.jpg',
-  },
-];
-
 export default function Collections() {
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
       gsap.to(headerRef.current, {
         opacity: 1,
         y: 0,
@@ -51,15 +27,15 @@ export default function Collections() {
         },
       });
 
-      // Cards animation
       cardsRef.current.forEach((card, i) => {
         if (!card) return;
+
         gsap.to(card, {
           opacity: 1,
           scale: 1,
           duration: 0.8,
           ease: 'power3.out',
-          delay: i * 0.1,
+          delay: i * 0.08,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 60%',
@@ -77,34 +53,34 @@ export default function Collections() {
       ref={sectionRef}
       id="collections"
       data-theme="light"
-      className="relative w-full section-light py-20 md:py-[120px]"
-      style={{ zIndex: 2 }}
+      className="relative w-full section-light"
+      style={{ zIndex: 2, padding: '120px 0' }}
     >
-      {/* Header */}
       <div
         ref={headerRef}
-        className="text-center mb-12 md:mb-16 opacity-0 translate-y-8 px-4 sm:px-6"
+        className="text-center mb-16 opacity-0 translate-y-8"
       >
         <p className="label-gold">COLLECTIONS</p>
         <h2 className="heading-2 text-[#1a1a1a] text-[clamp(1.75rem,3.5vw,2.75rem)] mt-3">
-          Four Algorithms, Infinite Garments
+          Nine Collections, Infinite Garments
         </h2>
       </div>
 
-      {/* Grid */}
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-[2px]">
+      <div className="max-w-[1280px] mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
           {collections.map((collection, i) => (
-            <div
-              key={collection.name}
+            <button
+              key={collection.slug}
               ref={(el) => {
                 cardsRef.current[i] = el;
               }}
-              className="group relative aspect-[4/5] sm:aspect-[3/4] overflow-hidden cursor-pointer opacity-0"
+              type="button"
+              onClick={() => navigate(`/collections/${collection.slug}`)}
+              className="group relative aspect-[3/4] overflow-hidden cursor-pointer opacity-0 text-left"
               style={{ transform: 'scale(0.95)' }}
               data-cursor="expand"
+              aria-label={`Open collection ${collection.name}`}
             >
-              {/* Image A (default) */}
               <img
                 src={collection.imageA}
                 alt={collection.name}
@@ -112,7 +88,6 @@ export default function Collections() {
                 loading="lazy"
               />
 
-              {/* Image B (hover) */}
               <img
                 src={collection.imageB}
                 alt={`${collection.name} detail`}
@@ -120,19 +95,24 @@ export default function Collections() {
                 loading="lazy"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-              {/* Text */}
-              <div className="absolute bottom-0 left-0 p-5 sm:p-6 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-                <h3 className="font-display text-xl sm:text-2xl text-white font-light">
-                  {collection.name}
-                </h3>
-                <p className="font-body text-[11px] uppercase tracking-[0.15em] text-white/70 mt-1">
-                  {collection.season}
-                </p>
+              <div className="absolute inset-x-0 bottom-0 p-6 transition-transform duration-300 ease-out group-hover:-translate-y-1">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <h3 className="font-display text-2xl text-white font-light">
+                      {collection.name}
+                    </h3>
+                    <p className="font-body text-[11px] uppercase tracking-[0.15em] text-white/70 mt-1">
+                      {collection.season}
+                    </p>
+                  </div>
+                  <span className="hidden sm:inline-flex font-body text-[10px] uppercase tracking-[0.18em] text-white/80 border border-white/20 px-3 py-2">
+                    View
+                  </span>
+                </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>

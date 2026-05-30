@@ -123,11 +123,11 @@ export default function Contact() {
 
           <div className="mt-12 space-y-2">
             <p className="font-body text-sm text-white/70">
-              contacte@mahimapatel.com
+              contact@mahimapatel.com
             </p>
-            <p className="font-body text-sm text-white/70">+33 1 42 65 00 00</p>
+            <p className="font-body text-sm text-white/70">+91 98765 43210</p>
             <p className="font-body text-sm text-white/70">
-              12 Rue du Faubourg Saint-Honor&eacute;, 75008 Paris
+              India
             </p>
           </div>
         </div>

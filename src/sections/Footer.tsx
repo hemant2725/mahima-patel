@@ -10,11 +10,13 @@ interface FooterProps {
 
 export default function Footer({ onNavigate }: FooterProps) {
   const footerRef = useRef<HTMLElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(footerRef.current, {
+      gsap.to(contentRef.current, {
         opacity: 1,
+        y: 0,
         duration: 0.6,
         ease: 'power2.out',
         scrollTrigger: {
@@ -35,16 +37,8 @@ export default function Footer({ onNavigate }: FooterProps) {
       style={{ zIndex: 2, padding: '48px 0 32px' }}
     >
       <div
-        className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 opacity-0"
-        ref={(el) => {
-          if (el) {
-            // Store reference for animation
-            const parent = el.parentElement;
-            if (parent) {
-              (parent as HTMLElement).dataset.footerContent = 'true';
-            }
-          }
-        }}
+        ref={contentRef}
+        className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 opacity-0 translate-y-4"
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 relative">
           {/* Navigation */}
@@ -86,7 +80,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         {/* Bottom bar */}
         <div className="mt-16 pt-6 border-t border-white/[0.05]">
           <p className="font-body text-[11px] text-white/30">
-            &copy; 2025 MAHIMA PATEL. All rights reserved.
+            &copy; 2026 MAHIMA PATEL. All rights reserved.
           </p>
         </div>
       </div>
