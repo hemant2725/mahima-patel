@@ -64,7 +64,7 @@ export const collections: Collection[] = [
     'AW25',
     'Draped memory, softened geometry, and a quiet sense of aftermath.',
     '/images/Karunya_(1).png',
-    '/images/Karunya_(6).png',
+    '/images/IMG_20260526_210501.png',
     [
       makeProduct(
         'Look 1',
@@ -72,7 +72,7 @@ export const collections: Collection[] = [
         'An evening gown with a long line and carefully folded volume.',
         'Silk crepe, organza lining, hand-finished seams',
         ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
-        ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
+        ['/images/Karunya_(1).png', '/images/Karunya_(2).png', '/images/Karunya_(5).png']
       ),
       makeProduct(
         'Look 2',
@@ -80,7 +80,7 @@ export const collections: Collection[] = [
         'A structured corset that balances restraint and softness.',
         'Bodice mesh, silk satin facing, boned structure',
         ['Internal boning', 'Silk facing at neckline', 'Lace-up back with reinforcement'],
-        ['/images/Karunya_(6).png', '/images/img-collection-1b.jpg', '/images/img-atelier-2.jpg']
+        ['/images/Aditi_ (1).png', '/images/Aditi_ (5).png', '/images/Aditi_ (2).png']
       ),
       makeProduct(
         'Look 3',
@@ -88,7 +88,7 @@ export const collections: Collection[] = [
         'An evening gown with a long line and carefully folded volume.',
         'Silk crepe, organza lining, hand-finished seams',
         ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
-        ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
+        ['/images/Kavya_ (2).png', '/images/Kavya_ (3).png', '/images/Kavya_ (4).png']
       ),
       makeProduct(
         'Look 4',
@@ -96,7 +96,7 @@ export const collections: Collection[] = [
         'An evening gown with a long line and carefully folded volume.',
         'Silk crepe, organza lining, hand-finished seams',
         ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
-        ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
+        ['/images/Komal_ (1).png', '/images/Komal_ (5).png']
       ),
       makeProduct(
         'Look 5',
@@ -112,8 +112,8 @@ export const collections: Collection[] = [
     'Crimson Spotlight',
     'AW25',
     'Sharp, polished tailoring with a midnight calm.',
-    '/images/img-collection-2a.jpg',
-    '/images/img-collection-2b.jpg',
+    '/images/Red.jpg',
+    '/images/Red2.jpg',
     [
       makeProduct(
         'Look 1',
@@ -121,10 +121,10 @@ export const collections: Collection[] = [
         'A sharp jacket with softened shoulders and a precise closure line.',
         'Italian wool suiting, silk lining, horn buttons',
         ['Single-breasted closure', 'Tailored shoulder structure', 'Fully lined in silk'],
-        ['/images/img-collection-2a.jpg', '/images/img-collection-2b.jpg', '/images/image.png']
+        ['/images/Red.jpg', '/images/Red2.jpg']
       ),
       makeProduct(
-        'Chorus Skirt',
+        'Look 2',
         171000,
         'A mid-length skirt with clean volume and a reflective finish.',
         'Silk taffeta, cotton waistband, soft netting',

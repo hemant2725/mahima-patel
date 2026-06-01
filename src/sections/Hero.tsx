@@ -87,55 +87,53 @@ export default function Hero({ onNavigate }: HeroProps) {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative w-full min-h-[100dvh] overflow-hidden bg-black flex flex-col items-center justify-center text-center px-4 sm:px-6"
+      className="relative w-full min-h-[100svh] md:min-h-[100dvh] overflow-hidden bg-black flex flex-col items-center justify-center text-center px-4 sm:px-6 py-20 sm:py-24 md:py-0"
       style={{ zIndex: 1 }}
     >
       <img
         src="/images/Group 5 front.png"
         alt="Editorial fashion portrait in a flowing organic linen gown"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[50%_18%] sm:object-[50%_22%] md:object-center"
         loading="eager"
         fetchPriority="high"
       />
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/55" />
 
-      <div className="absolute inset-x-0 bottom-12 sm:bottom-16 md:bottom-24 z-10 flex justify-center px-4 sm:px-6">
-        <div className="relative z-10 flex flex-col items-center max-w-[92vw] md:max-w-[760px]">
-          <p
-            ref={labelRef}
-            className="label-gold text-white/90 mb-4 sm:mb-6 opacity-0 translate-y-4"
-          >
-            SPRING / SUMMER 2026
-          </p>
+      <div className="relative z-10 flex w-full max-w-full sm:max-w-[36rem] md:max-w-[760px] flex-col items-center justify-center">
+        <p
+          ref={labelRef}
+          className="label-gold text-white/90 mb-4 sm:mb-6 opacity-0 translate-y-4"
+        >
+          SPRING / SUMMER 2026
+        </p>
 
-          <h1
-            ref={titleRef}
-            className="heading-display text-white text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] text-shadow-hero opacity-0 translate-y-6"
-          >
-            The Weight
-            <br />
-            of Light
-          </h1>
+        <h1
+          ref={titleRef}
+          className="heading-display text-white text-[clamp(2.25rem,12vw,5.8rem)] sm:text-[clamp(2.6rem,9vw,5.8rem)] leading-[0.9] sm:leading-[0.9] text-shadow-hero opacity-0 translate-y-6"
+        >
+          The Weight
+          <br />
+          of Light
+        </h1>
 
-          <p
-            ref={subtitleRef}
-            className="body-text text-white/90 mt-4 sm:mt-6 max-w-[24rem] sm:max-w-none opacity-0 translate-y-4"
-          >
-            Where nature meets intention.
-          </p>
+        <p
+          ref={subtitleRef}
+          className="body-text text-white/90 mt-4 sm:mt-6 max-w-[18rem] sm:max-w-[30rem] opacity-0 translate-y-4"
+        >
+          Where nature meets intention.
+        </p>
 
-          <button
-            ref={ctaRef}
-            onClick={() => onNavigate('collections')}
-            className="cta-button mt-8 sm:mt-12 w-full sm:w-auto opacity-0 translate-y-4"
-          >
-            Explore Collection
-          </button>
-        </div>
+        <button
+          ref={ctaRef}
+          onClick={() => onNavigate('collections')}
+          className="cta-button mt-8 sm:mt-12 w-fit max-w-full px-8 opacity-0 translate-y-4"
+        >
+          Explore Collection
+        </button>
       </div>
 
-      <div
+      {/* <div
         ref={chevronRef}
         className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 opacity-0 z-10"
       >
@@ -150,7 +148,7 @@ export default function Hero({ onNavigate }: HeroProps) {
         >
           <path d="M6 9l6 6 6-6" />
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 }
