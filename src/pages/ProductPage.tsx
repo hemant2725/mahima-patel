@@ -2,9 +2,10 @@ import { useLayoutEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
 import { getProduct } from '../data/shopCatalog';
+import { formatINR } from '../lib/currency';
 
 const buildMailtoUrl = (collectionName: string, productName: string) =>
-  `mailto:contacte@mahimapatel.com?subject=${encodeURIComponent(`Query about ${productName} from ${collectionName}`)}&body=${encodeURIComponent(`Hello, I would like to ask about ${productName} from the ${collectionName} collection.`)}`;
+  `mailto:mahima.patel@mahimapatel.com?subject=${encodeURIComponent(`Query about ${productName} from ${collectionName}`)}&body=${encodeURIComponent(`Hello, I would like to ask about ${productName} from the ${collectionName} collection.`)}`;
 
 export default function ProductPage() {
   const navigate = useNavigate();
@@ -92,7 +93,7 @@ export default function ProductPage() {
                 {collection.name}
               </span>
               <span className="font-body text-[11px] uppercase tracking-[0.18em] text-[#d4a853]">
-                {product.price}
+                {formatINR(product.price)}
               </span>
             </div>
 

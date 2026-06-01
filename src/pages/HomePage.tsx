@@ -1,6 +1,5 @@
 import Hero from '../sections/Hero';
 import Manifesto from '../sections/Manifesto';
-import SpiralShowcase from '../sections/SpiralShowcase';
 import Collections from '../sections/Collections';
 import AlgorithmDetail from '../sections/AlgorithmDetail';
 import Atelier from '../sections/Atelier';
@@ -18,7 +17,6 @@ export default function HomePage({ onNavigate }: HomePageProps) {
     <div className="relative">
       <Hero onNavigate={onNavigate} />
       <Manifesto />
-      <SpiralShowcase />
       <Collections />
       <AlgorithmDetail />
       <Atelier />

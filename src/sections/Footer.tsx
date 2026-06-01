@@ -33,54 +33,66 @@ export default function Footer({ onNavigate }: FooterProps) {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full bg-[#0a0a0a] border-t border-white/[0.08]"
-      style={{ zIndex: 2, padding: '48px 0 32px' }}
+      className="relative w-full overflow-hidden section-dark border-t border-white/[0.08]"
+      style={{ zIndex: 2, padding: '56px 0 32px' }}
     >
       <div
         ref={contentRef}
-        className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 opacity-0 translate-y-4"
+        className="relative max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 opacity-0 translate-y-4"
       >
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8 relative">
-          {/* Navigation */}
-          <div className="flex flex-wrap justify-center gap-6 w-full md:w-1/3 md:justify-start order-2 md:order-1">
-            {['Collections', 'Algorithm', 'Atelier', 'Contact'].map(
-              (label) => (
-                <button
-                  key={label}
-                  onClick={() => onNavigate(label.toLowerCase())}
-                  className="font-body text-[11px] uppercase tracking-[0.1em] text-white/50 hover:text-[#d4a853] transition-colors duration-300"
+        <div className="flex flex-col gap-10 sm:gap-12 md:gap-16">
+
+          {/* Nav + socials — above wordmark */}
+          <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+            <div className="flex flex-wrap gap-x-5 gap-y-4 sm:gap-x-6">
+              {['Collections', 'Algorithm', 'Atelier', 'Contact'].map(
+                (label) => (
+                  <button
+                    key={label}
+                    onClick={() => onNavigate(label.toLowerCase())}
+                    className="font-body text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/45 hover:text-[#d4a853] transition-colors duration-300"
+                  >
+                    {label}
+                  </button>
+                )
+              )}
+            </div>
+
+            <div className="flex flex-wrap gap-x-5 gap-y-4 md:justify-end">
+              {['Instagram', 'Pinterest'].map((social) => (
+                <span
+                  key={social}
+                  className="font-body text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/45 hover:text-[#d4a853] transition-colors duration-300 cursor-pointer"
                 >
-                  {label}
-                </button>
-              )
-            )}
+                  {social}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Brand */}
+          {/* Wordmark — single line */}
           <button
             onClick={() => onNavigate('hero')}
-            className="font-display text-sm uppercase tracking-[0.2em] text-white order-1 md:order-2 md:absolute md:left-1/2 md:-translate-x-1/2"
+            className="group text-center w-full"
+            aria-label="Back to top"
           >
-            MAHIMA PATEL
+            <h2
+              className="font-display whitespace-nowrap text-white uppercase leading-[0.86] tracking-[-0.03em] mx-auto"
+              style={{ fontSize: 'clamp(3rem, 10.5vw, 11rem)' }}
+            >
+              Mahima Patel
+            </h2>
           </button>
 
-          {/* Social */}
-          <div className="flex gap-6 w-full md:w-1/3 justify-center md:justify-end order-3">
-            {['Instagram', 'Pinterest'].map((social) => (
-              <span
-                key={social}
-                className="font-body text-[11px] uppercase tracking-[0.1em] text-white/50 hover:text-[#d4a853] transition-colors duration-300 cursor-pointer"
-              >
-                {social}
-              </span>
-            ))}
-          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-16 pt-6 border-t border-white/[0.05]">
-          <p className="font-body text-[11px] text-white/30">
-            &copy; 2026 MAHIMA PATEL. All rights reserved.
+        {/* Copyright */}
+        <div className="mt-12 sm:mt-14 md:mt-16 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+          <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/30">
+            &copy; 2026 Mahima Patel. All rights reserved.
+          </p>
+          <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/30">
+            Made in India
           </p>
         </div>
       </div>

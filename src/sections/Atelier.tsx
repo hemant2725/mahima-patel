@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 const atelierImages = [
   {
     src: '/images/img-atelier-1.jpg',
-    alt: 'Wide shot of atelier interior with golden afternoon light',
+    alt: 'Wide shot of atelier interior bathed in warm Delhi afternoon light',
   },
   {
     src: '/images/img-atelier-2.jpg',
-    alt: 'Close-up of hands embroidering golden thread',
+    alt: 'Close-up of hands weaving zari thread into black georgette',
   },
   {
     src: '/images/img-atelier-3.jpg',
-    alt: 'Model fitting session with architectural gold dress',
+    alt: 'Model fitting session with structured ivory column gown',
   },
   {
     src: '/images/img-atelier-4.jpg',
-    alt: 'Overhead shot of fabric swatches in golden spiral',
+    alt: 'Overhead flat-lay of fabric swatches arranged in a Fibonacci spiral',
   },
   {
     src: '/images/img-atelier-5.jpg',
-    alt: 'Sewing machine stitching golden thread into black silk',
+    alt: 'Artisan hand-finishing the hem of a draped silk charmeuse coat',
   },
 ];
 
@@ -37,7 +37,6 @@ export default function Atelier() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
       gsap.to(headerRef.current, {
         opacity: 1,
         y: 0,
@@ -50,7 +49,6 @@ export default function Atelier() {
         },
       });
 
-      // Gallery images
       if (galleryRef.current) {
         const images = galleryRef.current.querySelectorAll('.atelier-img');
         gsap.to(images, {
@@ -67,7 +65,6 @@ export default function Atelier() {
         });
       }
 
-      // Paragraph
       gsap.to(paragraphRef.current, {
         opacity: 1,
         y: 0,
@@ -84,7 +81,6 @@ export default function Atelier() {
     return () => ctx.revert();
   }, []);
 
-  // Drag handlers
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!galleryRef.current) return;
     setIsDragging(true);
@@ -106,7 +102,6 @@ export default function Atelier() {
     setIsDragging(false);
   };
 
-  // Touch handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!galleryRef.current) return;
     setIsDragging(true);
@@ -140,9 +135,9 @@ export default function Atelier() {
         ref={headerRef}
         className="text-center mb-10 md:mb-12 px-4 sm:px-6 opacity-0 translate-y-8"
       >
-        <p className="label-gold">PARIS ATELIER</p>
+        <p className="label-gold">NEW DELHI ATELIER</p>
         <h2 className="heading-2 text-[#1a1a1a] text-[clamp(1.75rem,3.5vw,2.75rem)] mt-3">
-          Where Code Becomes Cloth
+          Where Geometry Meets Thread
         </h2>
       </div>
 
@@ -191,10 +186,11 @@ export default function Atelier() {
         ref={paragraphRef}
         className="body-text text-[#666666] text-center max-w-[600px] mx-auto mt-10 md:mt-12 px-4 sm:px-6 opacity-0 translate-y-6"
       >
-        Every garment passes through 47 pairs of hands. Our atelier on Rue du
-        Faubourg Saint-Honor&eacute; has been operating since 1987, merging
-        traditional savoir-faire with computational design tools developed
-        in-house.
+        Each piece passes through 34 pairs of hands before it leaves our
+        studio in Mehrauli, New Delhi. Founded in 2011, the atelier operates
+        at the meeting point of Indian craft traditions and proprietary
+        algorithmic pattern systems — where a weaver&rsquo;s instinct and a
+        mathematician&rsquo;s precision arrive at the same answer.
       </p>
 
       <style>{`

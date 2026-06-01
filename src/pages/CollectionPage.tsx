@@ -2,6 +2,7 @@ import { useLayoutEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 
 import { getCollection } from '../data/shopCatalog';
+import { formatINR } from '../lib/currency';
 
 export default function CollectionPage() {
   const navigate = useNavigate();
@@ -139,7 +140,7 @@ export default function CollectionPage() {
                       </p>
                     </div>
                     <span className="font-body text-[11px] uppercase tracking-[0.16em] text-[#1a1a1a]">
-                      {product.price}
+                      {formatINR(product.price)}
                     </span>
                   </div>
 

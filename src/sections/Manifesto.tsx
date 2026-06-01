@@ -94,27 +94,28 @@ export default function Manifesto() {
             ref={headingRef}
             className="heading-2 text-white text-[clamp(1.75rem,5vw,2.75rem)] max-w-[520px] mx-auto md:mx-0 opacity-0 translate-y-8"
           >
-            Fashion is not decoration. It is computation made visible.
+            Sustainability is not a trend. It is a structural imperative.
           </h2>
 
           <p
             ref={bodyRef}
             className="body-text text-white/70 max-w-[460px] mx-auto md:mx-0 mt-6 sm:mt-8 opacity-0 translate-y-8"
           >
-            MAHIMA PATEL creates garments through the lens of algorithmic
-            design &mdash; each collection born from a single mathematical
-            formula, woven into fabric by artisans in our Paris atelier. The
-            golden spiral you see is not merely decoration. It is the DNA of our
-            process: the golden angle of 137.5 degrees that governs every
-            pattern, every drape, every seam.
+            MAHIMA PATEL engineers garments through the lens of circular
+            systems &mdash; each collection designed from the molecular level
+            up, crafted from regenerative materials in our carbon-neutral
+            atelier. The zero-waste pattern you see is not merely technique.
+            It is the DNA of our process: the tessellated geometry that
+            eliminates scrap, governs every cut, and ensures nothing is
+            discarded.
           </p>
 
           <a
             ref={ctaRef}
-            href="#algorithm"
+            href="#sustainability"
             className="text-link-gold mt-8 inline-block opacity-0 translate-y-8"
           >
-            Discover Our Process
+            Discover Our Materials
           </a>
         </div>
 
@@ -127,7 +128,7 @@ export default function Manifesto() {
           >
             <img
               src="/images/img-manifesto.png"
-              alt="Model wearing architectural golden silk dress"
+              alt="Model wearing zero-waste draped linen ensemble"
               className="w-full h-auto object-cover"
               loading="lazy"
             />

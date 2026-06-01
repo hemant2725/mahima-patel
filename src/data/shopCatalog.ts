@@ -1,7 +1,7 @@
 export type Product = {
   slug: string;
   name: string;
-  price: string;
+  price: number;
   description: string;
   fabric: string;
   fabricDetails: string[];
@@ -26,7 +26,7 @@ const slugify = (value: string) =>
 
 const makeProduct = (
   name: string,
-  price: string,
+  price: number,
   description: string,
   fabric: string,
   fabricDetails: string[],
@@ -60,40 +60,64 @@ const makeCollection = (
 
 export const collections: Collection[] = [
   makeCollection(
-    'Carrying What Remains',
+    'Echoes Beneath the Tide',
     'AW25',
     'Draped memory, softened geometry, and a quiet sense of aftermath.',
     '/images/Karunya_(1).png',
     '/images/Karunya_(6).png',
     [
       makeProduct(
-        'Memory Fold Gown',
-        'EUR 4,800',
+        'Look 1',
+        432000,
         'An evening gown with a long line and carefully folded volume.',
         'Silk crepe, organza lining, hand-finished seams',
         ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
         ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
       ),
       makeProduct(
-        'Residual Corset',
-        'EUR 2,100',
+        'Look 2',
+        189000,
         'A structured corset that balances restraint and softness.',
         'Bodice mesh, silk satin facing, boned structure',
         ['Internal boning', 'Silk facing at neckline', 'Lace-up back with reinforcement'],
         ['/images/Karunya_(6).png', '/images/img-collection-1b.jpg', '/images/img-atelier-2.jpg']
       ),
+      makeProduct(
+        'Look 3',
+        432000,
+        'An evening gown with a long line and carefully folded volume.',
+        'Silk crepe, organza lining, hand-finished seams',
+        ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
+        ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
+      ),
+      makeProduct(
+        'Look 4',
+        432000,
+        'An evening gown with a long line and carefully folded volume.',
+        'Silk crepe, organza lining, hand-finished seams',
+        ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
+        ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
+      ),
+      makeProduct(
+        'Look 5',
+        432000,
+        'An evening gown with a long line and carefully folded volume.',
+        'Silk crepe, organza lining, hand-finished seams',
+        ['Matte outer surface', 'Layered organza support', 'Invisible side closure'],
+        ['/images/Karunya_(1).png', '/images/img-collection-1a.jpg', '/images/img-atelier-3.jpg']
+      ),
     ]
   ),
   makeCollection(
-    'Nocturne Tailoring',
+    'Crimson Spotlight',
     'AW25',
     'Sharp, polished tailoring with a midnight calm.',
     '/images/img-collection-2a.jpg',
     '/images/img-collection-2b.jpg',
     [
       makeProduct(
-        'Lyric Tailored Jacket',
-        'EUR 3,600',
+        'Look 1',
+        324000,
         'A sharp jacket with softened shoulders and a precise closure line.',
         'Italian wool suiting, silk lining, horn buttons',
         ['Single-breasted closure', 'Tailored shoulder structure', 'Fully lined in silk'],
@@ -101,7 +125,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Chorus Skirt',
-        'EUR 1,900',
+        171000,
         'A mid-length skirt with clean volume and a reflective finish.',
         'Silk taffeta, cotton waistband, soft netting',
         ['Hidden fastening', 'Structured pleats', 'Internal netting for shape'],
@@ -110,7 +134,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Vortex Knitwear',
+    'Petals in Motion',
     'AW25',
     'Spiral tension translated into tactile knit structures.',
     '/images/img-collection-3a.jpg',
@@ -118,7 +142,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Helix Knit Top',
-        'EUR 1,450',
+        130500,
         'A close-fitting knit top with spiral rib detailing.',
         'Fine merino wool, stretch rib knit, silk trim',
         ['Gentle elasticity', 'Spiral rib panels', 'Silk-bound neckline'],
@@ -126,7 +150,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Current Coat',
-        'EUR 5,100',
+        459000,
         'A long knit coat with a grounded, editorial silhouette.',
         'Wool blend knit, structured collar, jersey lining',
         ['Longline cut', 'Jersey lining', 'Hidden placket and matte buttons'],
@@ -135,7 +159,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Golden Mesh',
+    'Pearls of the Tide',
     'AW25',
     'Metallic light, mesh, sheen, and quiet structure.',
     '/images/img-collection-4a.jpg',
@@ -143,7 +167,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Lattice Gown',
-        'EUR 5,400',
+        486000,
         'A long gown built from layered lattice sections that catch light softly.',
         'Metallic mesh, silk underdress, invisible support seams',
         ['Controlled transparency', 'Bias-cut underdress', 'Interior support seams'],
@@ -151,7 +175,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Mesh Column Dress',
-        'EUR 3,950',
+        355500,
         'A sleek column dress with a luminous surface and a clean vertical line.',
         'Sheer mesh, silk jersey lining, tonal binding',
         ['Gentle stretch', 'Sheer outer mesh', 'Matched trim at armhole and hem'],
@@ -160,7 +184,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Aster Drape',
+    'The Last Leaf',
     'SS26',
     'Light folds and softened movement caught mid-breath.',
     '/images/img-collection-1a.jpg',
@@ -168,7 +192,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Aster Gown',
-        'EUR 4,500',
+        405000,
         'A fluid gown with a lifted neckline and long drape lines.',
         'Silk satin, viscose lining, hand-rolled hem',
         ['Bias-cut silhouette', 'Hand-rolled hem', 'Refined inner lining'],
@@ -176,7 +200,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Petal Blouse',
-        'EUR 1,600',
+        144000,
         'A blouse with a fluid shoulder line and a soft closed neckline.',
         'Silk georgette, mother-of-pearl buttons, cotton voile lining',
         ['Gentle gathers', 'Lightweight outer layer', 'Hidden placket'],
@@ -185,7 +209,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Lumen Archive',
+    'Sea Glass Dreams',
     'SS26',
     'A brighter, more graphic line with a disciplined quiet.',
     '/images/image.png',
@@ -193,7 +217,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Archive Coat',
-        'EUR 5,200',
+        468000,
         'A tailored coat with crisp edges and a luminous interior finish.',
         'Wool twill, silk lining, brushed horn buttons',
         ['Sharp collar', 'Vertical line through body', 'Smooth silk interior'],
@@ -201,7 +225,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Frame Top',
-        'EUR 1,350',
+        121500,
         'A compact top with a framed neckline and a precise fit.',
         'Cotton silk blend, light stretch, self lining',
         ['Minimal seam lines', 'Gentle stretch', 'Easy layering'],
@@ -210,7 +234,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Atelier Echo',
+    'Digital Romance',
     'AW26',
     'Handwork, repetition, and a slower tactile expression.',
     '/images/img-atelier-1.jpg',
@@ -218,7 +242,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Echo Blazer',
-        'EUR 3,850',
+        346500,
         'A softly structured blazer with hand-finished edges.',
         'Virgin wool, silk lining, hand-finished seams',
         ['Relaxed tailoring', 'Artisanal edge finish', 'Fully lined interior'],
@@ -226,7 +250,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Thread Dress',
-        'EUR 2,950',
+        265500,
         'A long dress defined by fine stitch lines across the surface.',
         'Cotton silk blend, textured weave, soft lining',
         ['Surface texture through body', 'Ease in the skirt', 'Balanced underlayer'],
@@ -235,7 +259,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Silk Signal',
+    'Petal Lounge',
     'AW26',
     'Gloss, movement, and a soft electronic pulse.',
     '/images/img-atelier-3.jpg',
@@ -243,7 +267,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Signal Dress',
-        'EUR 4,250',
+        382500,
         'A bias-cut dress with a reflective surface that catches light in motion.',
         'Silk satin, stretch lining, concealed zip',
         ['Fluid drape', 'Soft glow under light', 'Comfortable inner lining'],
@@ -251,7 +275,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'Pulse Slip',
-        'EUR 2,150',
+        193500,
         'A lightweight slip with a subtle liquid sheen.',
         'Silk charmeuse, mesh support, fine straps',
         ['Minimal neckline', 'Body-skimming fit', 'Support mesh interior'],
@@ -260,7 +284,7 @@ export const collections: Collection[] = [
     ]
   ),
   makeCollection(
-    'Quiet Meridian',
+    '9th Collection',
     'AW26',
     'A hushed capsule balancing precision with softness.',
     '/images/img-atelier-5.jpg',
@@ -268,7 +292,7 @@ export const collections: Collection[] = [
     [
       makeProduct(
         'Meridian Gown',
-        'EUR 4,900',
+        441000,
         'A floor-length gown traced with long vertical lines.',
         'Silk crepe, satin lining, hidden side zip',
         ['Elongated line', 'Refined interior finish', 'Clean hem and closure'],
@@ -276,7 +300,7 @@ export const collections: Collection[] = [
       ),
       makeProduct(
         'North Coat',
-        'EUR 5,600',
+        504000,
         'A sculpted coat with a calm, architectural surface.',
         'Wool melton, silk lining, horn closure',
         ['Structured collar', 'Warm outer shell', 'Minimal front fastening'],

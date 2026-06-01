@@ -92,7 +92,7 @@ export default function Hero({ onNavigate }: HeroProps) {
     >
       <img
         src="/images/Group 5 front.png"
-        alt="Editorial fashion portrait in a gold sculptural gown"
+        alt="Editorial fashion portrait in a flowing organic linen gown"
         className="absolute inset-0 h-full w-full object-cover object-center"
         loading="eager"
         fetchPriority="high"
@@ -106,23 +106,23 @@ export default function Hero({ onNavigate }: HeroProps) {
             ref={labelRef}
             className="label-gold text-white/90 mb-4 sm:mb-6 opacity-0 translate-y-4"
           >
-            AUTUMN / WINTER 2025
+            SPRING / SUMMER 2026
           </p>
 
           <h1
             ref={titleRef}
             className="heading-display text-white text-[clamp(2.5rem,8vw,5rem)] leading-[0.95] text-shadow-hero opacity-0 translate-y-6"
           >
-            The Geometry
+            The Weight
             <br />
-            of Desire
+            of Light
           </h1>
 
           <p
             ref={subtitleRef}
             className="body-text text-white/90 mt-4 sm:mt-6 max-w-[24rem] sm:max-w-none opacity-0 translate-y-4"
           >
-            Where couture meets algorithm.
+            Where nature meets intention.
           </p>
 
           <button

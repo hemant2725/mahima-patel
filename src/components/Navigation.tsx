@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Collections', id: 'collections' },
   { label: 'Algorithm', id: 'algorithm' },
   { label: 'Atelier', id: 'atelier' },
+  { label: 'Founder', id: 'founder' },
 ];
 
 export default function Navigation({ onNavigate }: NavigationProps) {

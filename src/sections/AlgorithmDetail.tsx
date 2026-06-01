@@ -11,7 +11,6 @@ export default function AlgorithmDetail() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Left column animation
       gsap.to(leftRef.current, {
         opacity: 1,
         x: 0,
@@ -24,7 +23,6 @@ export default function AlgorithmDetail() {
         },
       });
 
-      // SVG animation
       gsap.to(svgRef.current, {
         opacity: 1,
         scale: 1,
@@ -59,17 +57,21 @@ export default function AlgorithmDetail() {
           <p className="label-gold">THE MATHEMATICS</p>
 
           <h2 className="heading-display text-white text-[clamp(2.5rem,10vw,5rem)] tracking-[-0.04em] mt-4">
-            137.5&deg;
+            1.618
           </h2>
 
           <p className="body-text text-white/70 max-w-[400px] mx-auto md:mx-0 mt-6 sm:mt-8">
-            The golden angle. The irrational rotation that produces the most
-            efficient packing in nature &mdash; sunflower seeds, pinecones,
-            succulent spirals. We encode this angle into every pattern, letting
-            nature&apos;s own optimization become the foundation of haute couture.
+            The golden ratio. An irrational number that has governed proportion
+            in architecture, music, and the human form for millennia. At Mahima
+            Patel, it is not an aesthetic reference — it is a structural
+            instruction. Every seam placement, dart angle, and hem drop is
+            derived from &phi;, producing silhouettes that feel inevitable
+            rather than designed.
           </p>
 
-          <button className="cta-button mt-8 w-full sm:w-auto">View Technical Process</button>
+          {/* <button className="cta-button mt-8 w-full sm:w-auto">
+            View Technical Process
+          </button> */}
         </div>
 
         {/* Right Column - SVG Spiral */}
@@ -80,14 +82,12 @@ export default function AlgorithmDetail() {
             className="spiral-rotate w-full max-w-[240px] sm:max-w-[300px] md:max-w-[360px] opacity-0"
             style={{ transform: 'scale(0.8)' }}
           >
-            {/* Golden spiral approximation using SVG path */}
             <defs>
               <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stopColor="#d4a853" />
                 <stop offset="100%" stopColor="#b8932f" />
               </linearGradient>
             </defs>
-            {/* Draw a golden spiral using connected arcs */}
             <path
               d="M100 100 
                  L100 60 
@@ -105,7 +105,6 @@ export default function AlgorithmDetail() {
               strokeWidth="1"
               strokeLinecap="round"
             />
-            {/* Radial guide lines at golden angle */}
             <g opacity="0.3">
               {[...Array(12)].map((_, i) => {
                 const angle = (i * 137.5 * Math.PI) / 180;
@@ -124,7 +123,6 @@ export default function AlgorithmDetail() {
                 );
               })}
             </g>
-            {/* Center dot */}
             <circle cx="100" cy="100" r="3" fill="#d4a853" />
           </svg>
         </div>
