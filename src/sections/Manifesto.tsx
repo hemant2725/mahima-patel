@@ -4,12 +4,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Manifesto() {
+interface ManifestoProps {
+  onNavigate: (id: string) => void;
+}
+
+export default function Manifesto({ onNavigate }: ManifestoProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const labelRef = useRef<HTMLParagraphElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const bodyRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -112,13 +116,14 @@ export default function Manifesto() {
             every cut, eliminates every scrap, and leaves nothing to chance.
           </p>
 
-          <a
+          <button
             ref={ctaRef}
-            href="#sustainability"
-            className="text-link-gold mt-8 inline-block opacity-0 translate-y-8"
+            type="button"
+            onClick={() => onNavigate('materials')}
+            className="text-link-gold mt-8 inline-block opacity-0 translate-y-8 text-left"
           >
             Discover Our Materials
-          </a>
+          </button>
         </div>
 
         {/* Image Column - 45% */}

@@ -16,7 +16,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="relative">
       <Hero onNavigate={onNavigate} />
-      <Manifesto />
+      <Manifesto onNavigate={onNavigate} />
       <Collections />
       <AlgorithmDetail />
       <Atelier />

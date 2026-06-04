@@ -185,7 +185,7 @@ export const collections: Collection[] = [
   ),
   makeCollection(
     'The Last Leaf',
-    'AW25',
+    'AW26',
     `Autumnal Allure — The Transformation. Inspired by the transformation of maple leaves from green to brown, this collection features hand-painted, maple leaf-shaped welts and delicate stone embroidery. The rich autumnal palette and structured silhouettes blend seasonal storytelling with craftsmanship, capturing nature's fleeting beauty in wearable, elegant, and artistic outerwear.`,
     '/images/img-collection-1a.jpg',
     '/images/img-collection-1b.jpg',

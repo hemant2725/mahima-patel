@@ -8,6 +8,7 @@ import SpiralVortex from './components/SpiralVortex';
 import CustomCursor from './components/CustomCursor';
 import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
+import MaterialsPage from './pages/MaterialsPage';
 import CollectionPage from './pages/CollectionPage';
 import ProductPage from './pages/ProductPage';
 import NotFound from './pages/NotFound';
@@ -94,6 +95,11 @@ function App() {
       return;
     }
 
+    if (id === 'materials') {
+      navigate('/materials');
+      return;
+    }
+
     navigate(id === 'hero' ? '/' : `/#${id}`);
   };
 
@@ -106,6 +112,7 @@ function App() {
       <div className="relative" style={{ zIndex: 1 }}>
         <Routes>
           <Route path="/" element={<HomePage onNavigate={handleNavigate} />} />
+          <Route path="/materials" element={<MaterialsPage />} />
           <Route
             path="/collections/:collectionSlug"
             element={<CollectionPage />}

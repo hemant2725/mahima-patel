@@ -23,7 +23,8 @@ export default function Navigation({ onNavigate }: NavigationProps) {
 
   const isCollectionFlow = location.pathname.startsWith('/collections');
   const isProductFlow = location.pathname.includes('/products/');
-  const minimalHeader = isCollectionFlow || isProductFlow;
+  const isMaterialsFlow = location.pathname.startsWith('/materials');
+  const minimalHeader = isCollectionFlow || isProductFlow || isMaterialsFlow;
 
   useEffect(() => {
     const handleScroll = () => {
