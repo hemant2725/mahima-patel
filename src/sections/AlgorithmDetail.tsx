@@ -44,7 +44,7 @@ export default function AlgorithmDetail() {
     <section
       ref={sectionRef}
       id="algorithm"
-      className="relative w-full section-dark py-20 md:py-[120px]"
+      className="relative w-full section-dark py-16 md:py-[96px]"
       style={{ zIndex: 2 }}
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center gap-10 lg:gap-16">
@@ -57,16 +57,20 @@ export default function AlgorithmDetail() {
           <p className="label-gold">THE MATHEMATICS</p>
 
           <h2 className="heading-display text-white text-[clamp(2.5rem,10vw,5rem)] tracking-[-0.04em] mt-4">
-            1.618
+            137.5°
           </h2>
 
           <p className="body-text text-white/70 max-w-[400px] mx-auto md:mx-0 mt-6 sm:mt-8">
-            The golden ratio. An irrational number that has governed proportion
-            in architecture, music, and the human form for millennia. At Mahima
-            Patel, it is not an aesthetic reference — it is a structural
-            instruction. Every seam placement, dart angle, and hem drop is
-            derived from &phi;, producing silhouettes that feel inevitable
-            rather than designed.
+            The golden angle. Found in the spiral of a sunflower. The
+            branching of a fern. The chambered nautilus. For millennia, this
+            irrational number has quietly structured the natural world &mdash;
+            and gone unnoticed precisely because it feels inevitable.
+            <br />
+            <br />
+            At MAHIMA PATEL, 137.5&deg; is not an aesthetic reference. It is a
+            construction rule. Every seam placement, dart angle, and hem drop
+            is derived from it &mdash; producing silhouettes the body
+            recognises before the mind does.
           </p>
 
           {/* <button className="cta-button mt-8 w-full sm:w-auto">

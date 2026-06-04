@@ -34,7 +34,7 @@ export default function Footer({ onNavigate }: FooterProps) {
     <footer
       ref={footerRef}
       className="relative w-full overflow-hidden section-dark border-t border-white/[0.08]"
-      style={{ zIndex: 2, padding: '56px 0 32px' }}
+      style={{ zIndex: 2, padding: '40px 0 28px' }}
     >
       <div
         ref={contentRef}
@@ -58,15 +58,27 @@ export default function Footer({ onNavigate }: FooterProps) {
               )}
             </div>
 
-            <div className="flex flex-wrap gap-x-5 gap-y-4 md:justify-end">
-              {['Instagram', 'Pinterest'].map((social) => (
-                <span
-                  key={social}
-                  className="font-body text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/45 hover:text-[#d4a853] transition-colors duration-300 cursor-pointer"
-                >
-                  {social}
-                </span>
-              ))}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 md:justify-end md:text-right">
+              <span className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/25">
+                Reach us on:
+              </span>
+              <a
+                href="https://www.instagram.com/mahima_0.6/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-body text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/45 hover:text-[#d4a853] transition-colors duration-300"
+              >
+                Instagram
+              </a>
+              
+              <a
+                href="https://wa.me/918881025151"
+                target="_blank"
+                rel="noreferrer"
+                className="font-body text-[11px] uppercase tracking-[0.14em] sm:tracking-[0.18em] text-white/45 hover:text-[#d4a853] transition-colors duration-300"
+              >
+                WhatsApp
+              </a>
             </div>
           </div>
 

@@ -127,17 +127,18 @@ export default function Atelier() {
       ref={sectionRef}
       id="atelier"
       data-theme="light"
-      className="relative w-full section-light py-20 md:py-[120px]"
+      className="relative w-full section-light py-16 md:py-[96px]"
       style={{ zIndex: 2 }}
     >
       {/* Header */}
       <div
         ref={headerRef}
-        className="text-center mb-10 md:mb-12 px-4 sm:px-6 opacity-0 translate-y-8"
+        className="text-center mb-8 md:mb-10 px-4 sm:px-6 opacity-0 translate-y-8"
       >
         <p className="label-gold">NEW DELHI ATELIER</p>
         <h2 className="heading-2 text-[#1a1a1a] text-[clamp(1.75rem,3.5vw,2.75rem)] mt-3">
-          Where Geometry Meets Thread
+          Where a weaver's instinct and a mathematician's precision arrive at
+          the same answer.
         </h2>
       </div>
 
@@ -184,13 +185,15 @@ export default function Atelier() {
       {/* Paragraph */}
       <p
         ref={paragraphRef}
-        className="body-text text-[#666666] text-center max-w-[600px] mx-auto mt-10 md:mt-12 px-4 sm:px-6 opacity-0 translate-y-6"
+        className="body-text text-[#666666] text-center max-w-[600px] mx-auto mt-8 md:mt-10 px-4 sm:px-6 opacity-0 translate-y-6"
       >
-        Each piece passes through 34 pairs of hands before it leaves our
-        studio in Mehrauli, New Delhi. Founded in 2011, the atelier operates
-        at the meeting point of Indian craft traditions and proprietary
-        algorithmic pattern systems — where a weaver&rsquo;s instinct and a
-        mathematician&rsquo;s precision arrive at the same answer.
+        Our atelier in Mehrauli, New Delhi has operated since 2011 at the
+        meeting point of two traditions &mdash; the inherited knowledge of
+        Indian craft and the proprietary geometry of algorithmic pattern-making.
+        <br />
+        <br />
+        Every piece passes through 34 pairs of hands. Each one trained to
+        understand both the system and the soul behind it.
       </p>
 
       <style>{`

@@ -54,7 +54,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative w-full section-dark py-20 md:py-[120px]"
+      className="relative w-full section-dark py-16 md:py-[96px]"
       style={{ zIndex: 2 }}
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row gap-10 lg:gap-16">
@@ -123,7 +123,7 @@ export default function Contact() {
 
           <div className="mt-12 space-y-2">
             <p className="font-body text-sm text-white/70">
-              mahima.patel@mahimapatel.com
+              contact@mahimapatel.com
             </p>
             <p className="font-body text-sm text-white/70">+91 88810 25151</p>
             {/* <p className="font-body text-sm text-white/70">

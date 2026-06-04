@@ -69,7 +69,7 @@ export default function Press() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full section-dark py-20 md:py-[120px]"
+      className="relative w-full section-dark py-16 md:py-[96px]"
       style={{ zIndex: 2 }}
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row gap-10 lg:gap-16">
@@ -80,7 +80,7 @@ export default function Press() {
         >
           <p className="label-gold">RECOGNITION</p>
           <h2 className="heading-2 text-white text-[clamp(1.75rem,3.5vw,2.75rem)] mt-3">
-            What They Write
+            As Recognised By
           </h2>
         </div>
 

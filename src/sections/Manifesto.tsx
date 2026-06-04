@@ -77,7 +77,7 @@ export default function Manifesto() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full section-dark py-20 md:py-[120px]"
+      className="relative w-full section-dark py-16 md:py-[96px]"
       style={{ zIndex: 2 }}
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-start gap-10 lg:gap-16">
@@ -101,13 +101,15 @@ export default function Manifesto() {
             ref={bodyRef}
             className="body-text text-white/70 max-w-[460px] mx-auto md:mx-0 mt-6 sm:mt-8 opacity-0 translate-y-8"
           >
-            MAHIMA PATEL engineers garments through the lens of circular
-            systems &mdash; each collection designed from the molecular level
-            up, crafted from regenerative materials in our carbon-neutral
-            atelier. The zero-waste pattern you see is not merely technique.
-            It is the DNA of our process: the tessellated geometry that
-            eliminates scrap, governs every cut, and ensures nothing is
-            discarded.
+            MAHIMA PATEL builds garments from first principles &mdash; each
+            collection conceived from the material level up, using
+            regenerative fabrics grown and sourced within closed-loop systems.
+            Our atelier operates carbon-neutral, by design, not by offset.
+            <br />
+            <br />
+            The zero-waste pattern is not a technique we apply. It is the
+            logic we begin with &mdash; a tessellated geometry that governs
+            every cut, eliminates every scrap, and leaves nothing to chance.
           </p>
 
           <a

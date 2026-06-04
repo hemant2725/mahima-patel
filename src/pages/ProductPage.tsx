@@ -5,7 +5,7 @@ import { getProduct } from '../data/shopCatalog';
 import { formatINR } from '../lib/currency';
 
 const buildMailtoUrl = (collectionName: string, productName: string) =>
-  `mailto:mahima.patel@mahimapatel.com?subject=${encodeURIComponent(`Query about ${productName} from ${collectionName}`)}&body=${encodeURIComponent(`Hello, I would like to ask about ${productName} from the ${collectionName} collection.`)}`;
+  `mailto:contact@mahimapatel.com?subject=${encodeURIComponent(`Query about ${productName} from ${collectionName}`)}&body=${encodeURIComponent(`Hello, I would like to ask about ${productName} from the ${collectionName} collection.`)}`;
 
 export default function ProductPage() {
   const navigate = useNavigate();

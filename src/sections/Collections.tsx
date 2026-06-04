@@ -54,15 +54,15 @@ export default function Collections() {
       id="collections"
       data-theme="light"
       className="relative w-full section-light"
-      style={{ zIndex: 2, padding: '120px 0' }}
+      style={{ zIndex: 2, padding: '88px 0' }}
     >
       <div
         ref={headerRef}
-        className="text-center mb-16 opacity-0 translate-y-8"
+        className="text-center mb-10 md:mb-12 opacity-0 translate-y-8"
       >
         <p className="label-gold">COLLECTIONS</p>
         <h2 className="heading-2 text-[#1a1a1a] text-[clamp(1.75rem,3.5vw,2.75rem)] mt-3">
-          Nine Collections, Infinite Garments
+          Nine Collections. Every Garment, Intentional.
         </h2>
       </div>
 

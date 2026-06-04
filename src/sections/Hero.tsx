@@ -121,7 +121,7 @@ export default function Hero({ onNavigate }: HeroProps) {
           ref={subtitleRef}
           className="body-text text-white/90 mt-4 sm:mt-6 max-w-[18rem] sm:max-w-[30rem] opacity-0 translate-y-4"
         >
-          Where nature meets intention.
+          Structured by φ. Sewn by hand. Worn by intention.
         </p>
 
         <button

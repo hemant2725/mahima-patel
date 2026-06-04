@@ -66,7 +66,7 @@ export default function Founder() {
     <section
       ref={sectionRef}
       id="founder"
-      className="relative w-full section-dark py-24 md:py-[140px] border-t border-white/[0.06]"
+      className="relative w-full section-dark py-20 md:py-[112px] border-t border-white/[0.06]"
       style={{ zIndex: 2 }}
     >
       <div className="max-w-[1320px] mx-auto px-6 md:px-12">
@@ -80,7 +80,7 @@ export default function Founder() {
           >
             <div className="relative overflow-hidden">
               <img
-                src="/images/image.png"
+                src="/images/mahima.jpeg"
                 alt="Mahima Patel"
                 className="w-full h-[650px] object-cover"
               />
@@ -110,9 +110,7 @@ export default function Founder() {
               ref={headingRef}
               className="heading-2 text-white text-[clamp(2rem,4vw,4rem)] leading-[1.05] mt-5 opacity-0 translate-y-8"
             >
-              Designing through emotion,
-              memory, and the quiet beauty
-              of everyday moments.
+              Where the algorithm ends, instinct begins.
             </h2>
 
             <div
@@ -120,32 +118,29 @@ export default function Founder() {
               className="opacity-0 translate-y-8"
             >
               <p className="body-text text-white/70 mt-8 max-w-[620px]">
-                Mahima Patel approaches fashion as a form of storytelling.
-                Her inspiration often emerges from memories, conversations,
-                architecture, music, poetry, and the subtle movements that
-                linger in the mind long after they are experienced.
+                Mahima Patel builds collections the way a composer writes
+                music &mdash; with precise structure and felt emotion,
+                inseparable from each other.
               </p>
 
               <p className="body-text text-white/70 mt-6 max-w-[620px]">
-                Rather than following a single formula, she allows ideas to
-                evolve naturally—becoming bold, dramatic, soft, or expressive
-                depending on the story being told. Each collection is built
-                through thoughtful layering, refined silhouettes, and an
-                intuitive understanding of texture, movement, and presence.
+                Her process begins in research: architecture, poetry, molecular
+                geometry, the way light moves through fabric at a specific
+                hour. What emerges is never accidental. Each silhouette is
+                designed to carry weight &mdash; not in volume, but in meaning.
               </p>
 
               <p className="body-text text-white/70 mt-6 max-w-[620px]">
-                For Mahima, clothing is more than fabric. It carries emotion,
-                preserves moments, and becomes part of the person who wears it.
-                Her vision is to create garments that make women feel powerful,
-                beautiful, vulnerable, and confident—all at once.
+                For Mahima, a garment is not finished when the pattern is
+                solved. It is finished when it makes the woman who wears it
+                feel simultaneously powerful, present, and herself.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-[11px] uppercase tracking-[0.18em] text-white/45">
-                <span>Emotion Driven Design</span>
-                <span>Storytelling Through Fashion</span>
+                <span>Algorithmic Craft</span>
+                <span>Structured Emotion</span>
                 <span>Modern Feminine Luxury</span>
-                <span>Craft & Detail</span>
+                <span>Precision & Detail</span>
               </div>
             </div>
           </div>
